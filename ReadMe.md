@@ -5,7 +5,7 @@ This is a mod for Rogue Legacy 2.
 ### Description
 Zooms the camera out. The zoom does not change based on the size of the room. These settings can be configured in the file `[...]/Rogue Legacy 2/BepInEx/config/SchuhBaum.CameraZoom.cfg`.
 
-Here is a youtube video:
+Here is a youtube video:  
 [https://www.youtube.com/watch?v=V30o5eIbZNs](https://www.youtube.com/watch?v=V30o5eIbZNs)
 
 ### Installation
@@ -22,7 +22,7 @@ In the logs, you should see entries like `[Info:BepInEx] Loading [CameraZoom 0.0
 Please describe step-by-step how to reproduce the issue. You can post them here on GitHub under the tab `Issues`.
 
 ### Source Code
-This mod uses the mod template from `wobat`:
+This mod uses the mod template from `wobat`:  
 [https://www.nexusmods.com/roguelegacy2/mods/24](https://www.nexusmods.com/roguelegacy2/mods/24)
 
 ### Contact
