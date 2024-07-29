@@ -18,11 +18,16 @@ internal static class CameraController_ClampZoomLevel {
             return;
         }
 
-        // Take the max. Black borders horizontal or vertical are fine. Diagonal
-        // ones are bad because then you can see some random textures in the
-        // corners.
-        if (confinerSize.x > 1f || confinerSize.y > 1f) {
-            float b = Mathf.Max(confinerSize.x, confinerSize.y);
+        // On my 16:10 screen I have the problem that the game zooms in. So it
+        // scrolls in 1 screen wide rooms. This helps in countering that.
+        if (!AspectRatioManager.ForceEnable_16_9 && !AspectRatioManager.IsScreen_16_9_AspectRatio) {
+            float ratio = AspectRatioManager.STANDARD_16_9_ASPECT_RATIO / AspectRatioManager.CurrentGameAspectRatio;
+            if (ratio < 1f) ratio = 1f;
+            confinerSize.x = Mathf.Max(ratio, confinerSize.x);
+        }
+
+        if (confinerSize.x > 1f && confinerSize.y > 1f) {
+            float b = Mathf.Min(confinerSize.x, confinerSize.y);
             __result = Mathf.Min(zoomLevel, b);
             return;
         }

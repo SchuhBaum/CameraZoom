@@ -4,12 +4,12 @@ using Wob_Common;
 
 namespace CameraZoom;
 
-[BepInPlugin("SchuhBaum.CameraZoom", "CameraZoom", "0.0.1")]
+[BepInPlugin("SchuhBaum.CameraZoom", "CameraZoom", "0.0.2")]
 public class MainMod : BaseUnityPlugin {
     // meta data
     public static string mod_id = "CameraZoom";
     public static string author = "SchuhBaum";
-    public static string version = "v0.0.1";
+    public static string version = "v0.0.2";
 
     // options
     public static float camera_zoom_multiplier = 1.5f;
@@ -24,9 +24,9 @@ public class MainMod : BaseUnityPlugin {
         is_initialized = true;
         WobPlugin.Initialise(this, this.Logger);
 
-        WobSettings.Add(new WobSettings.Num<float>("Options", "camera_zoom_multiplier", "Values larger than 1 zoom out the camera. The camera does not zoom out if the room is too small.", 1.5f, bounds: (0.1f, 2.0f)));
-        WobSettings.Add(new WobSettings.Boolean("Options", "is_zoom_constant", "When enabled, the zoom does not changed based on the size of the room. The base zoom value stays at 1.", true));
-        WobSettings.Add(new WobSettings.Boolean("Options", "is_zoom_forced", "When enabled, the zoom is used in small rooms as well. This creates black borders all around the room.", true));
+        WobSettings.Add(new WobSettings.Num<float>("Options", "camera_zoom_multiplier", "Values larger than 1 zoom out the camera. The camera does not zoom out if the room is too small.", camera_zoom_multiplier, bounds: (0.1f, 2.5f)));
+        WobSettings.Add(new WobSettings.Boolean("Options", "is_zoom_constant", "When enabled, the zoom does not changed based on room or biome specific rules. The base zoom value stays at 1.", is_zoom_constant));
+        WobSettings.Add(new WobSettings.Boolean("Options", "is_zoom_forced", "When enabled, the zoom is used in small rooms as well. This creates black borders.", is_zoom_forced));
         WobPlugin.Patch();
 
         camera_zoom_multiplier = WobSettings.Get("Options", "camera_zoom_multiplier", camera_zoom_multiplier);
