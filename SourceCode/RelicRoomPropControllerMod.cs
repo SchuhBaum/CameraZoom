@@ -1,5 +1,5 @@
 using HarmonyLib;
-using UnityEngine;
+using static CameraZoom.MainMod;
 
 namespace CameraZoom;
 
@@ -12,11 +12,14 @@ internal static class RelicRoomPropController_InitializeTextBox {
 		} else {
             genericInfoTextBox = __instance.RightInfoTextBox;
 		}
+        zoom_info_text_box(genericInfoTextBox);
+    }
+}
 
-        Transform? transform = genericInfoTextBox?.transform.Find("BG");
-        if (transform != null) {
-            float zoom_level = Mathf.Min(1.5f, CameraController.ZoomLevel);
-            transform.localScale = new Vector3(zoom_level, zoom_level, 1f);
-        }
+[HarmonyPatch(typeof(HealingRoomPropController), "InitializePooledPropOnEnter")]
+internal static class HealingRoomPropController_InitializePooledPropOnEnter {
+    internal static void Postfix(HealingRoomPropController __instance) {
+        zoom_info_text_box(__instance.LeftInfoTextBox);
+        zoom_info_text_box(__instance.RightInfoTextBox);
     }
 }

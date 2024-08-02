@@ -13,17 +13,18 @@ internal static class CameraController_ClampZoomLevel {
         if (is_zoom_constant) zoomLevel = 1f;
         zoomLevel *= camera_zoom_multiplier;
 
-        if (is_zoom_forced) {
-            __result = zoomLevel;
-            return;
-        }
-
         // On my 16:10 screen I have the problem that the game zooms in. So it
-        // scrolls in 1 screen wide rooms. This helps in countering that.
+        // scrolls in one-screen wide rooms. Undo this here.
         if (!AspectRatioManager.ForceEnable_16_9 && !AspectRatioManager.IsScreen_16_9_AspectRatio) {
             float ratio = AspectRatioManager.STANDARD_16_9_ASPECT_RATIO / AspectRatioManager.CurrentGameAspectRatio;
             if (ratio < 1f) ratio = 1f;
-            confinerSize.x = Mathf.Max(ratio, confinerSize.x);
+            confinerSize *= ratio;
+            zoomLevel    *= ratio;
+        }
+
+        if (is_zoom_forced) {
+            __result = zoomLevel;
+            return;
         }
 
         if (confinerSize.x > 1f && confinerSize.y > 1f) {

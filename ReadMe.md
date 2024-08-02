@@ -1,5 +1,5 @@
 ## CameraZoom
-###### Version: 0.0.2
+###### Version: 0.0.3
 This is a mod for Rogue Legacy 2.
 
 ### Description
@@ -11,12 +11,12 @@ Here is a youtube video:
 ### Installation
 0.1 Download the file `BepInEx_win_x64_5.4.23.2.zip` (or newer) from [here](https://github.com/BepInEx/BepInEx/releases).
 0.2 Extract its content in the folder `[Steam]/SteamApps/common/Rogue Legacy 2` (this is the folder that contains the file `Rogue Legacy 2.exe`)
-1. Download the file `CameraZoom.zip` from [Releases](https://github.com/SchuhBaum/CameraZoom/releases/tag/v0.0.2).
+1. Download the file `CameraZoom.zip` from [Releases](https://github.com/SchuhBaum/CameraZoom/releases/tag/v0.0.3).
 2. Again, extract its content in the folder `[Steam]/SteamApps/common/Rogue Legacy 2`.
 3. Start the game as normal.
 
 You can check the logs for errors or if you have installed BepInEx and the mod correctly. There are two logs -- `[...]/Rogue Legacy 2/BepInEx/LogOutput.log` and `[User]/AppData/LocalLow/Cellar Door Games/Rogue Legacy 2/Player.log`.
-In the logs, you should see entries like `[Info:BepInEx] Loading [CameraZoom 0.0.2]`.
+In the logs, you should see entries like `[Info:BepInEx] Loading [CameraZoom 0.0.3]`.
 
 ### Bug reports
 Please describe step-by-step how to reproduce the issue. You can post them here on GitHub under the tab `Issues`.
@@ -32,6 +32,10 @@ If you have feedback, you can message me on Discord `@schuhbaum` or write an ema
 See the file LICENSE-MIT.
 
 ### Changelog
+v0.0.3:
+- Changed default values.
+- Scale the text boxes for health drops in healing rooms.
+
 v0.0.2:
 - Scale the relic text boxes based on the camera zoom.
 
