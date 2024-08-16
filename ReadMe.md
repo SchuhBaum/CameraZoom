@@ -8,11 +8,13 @@ Zooms the camera out. The zoom does not change based on the size of the room. Th
 Here is a youtube video:  
 [https://www.youtube.com/watch?v=V30o5eIbZNs](https://www.youtube.com/watch?v=V30o5eIbZNs)
 
-### Installation
-0.1 Download the file `BepInEx_win_x64_5.4.23.2.zip` (or newer) from [here](https://github.com/BepInEx/BepInEx/releases).
-0.2 Extract its content in the folder `[Steam]/SteamApps/common/Rogue Legacy 2` (this is the folder that contains the file `Rogue Legacy 2.exe`)
+### Installation of the ModLoader BepInEx
+1. Download the file `BepInEx_win_x64_5.4.23.2.zip` (or newer) from [here](https://github.com/BepInEx/BepInEx/releases).  
+2. Extract its content in the folder `[Steam]/SteamApps/common/Rogue Legacy 2` (this is the folder that contains the file `Rogue Legacy 2.exe`)
+
+### Installation of this Mod
 1. Download the file `CameraZoom.zip` from [Releases](https://github.com/SchuhBaum/CameraZoom/releases/tag/v0.0.3).
-2. Again, extract its content in the folder `[Steam]/SteamApps/common/Rogue Legacy 2`.
+2. Extract its content in the folder `[Steam]/SteamApps/common/Rogue Legacy 2`.
 3. Start the game as normal.
 
 You can check the logs for errors or if you have installed BepInEx and the mod correctly. There are two logs -- `[...]/Rogue Legacy 2/BepInEx/LogOutput.log` and `[User]/AppData/LocalLow/Cellar Door Games/Rogue Legacy 2/Player.log`.
